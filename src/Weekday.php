@@ -18,27 +18,26 @@
                 if($lower_case_month == $key)
                 {
                     $month_value = $value;
-
                 }
             }
             $day_of_week = $month_value + $input_day + $year_number;
 
             if ($day_of_week > 6)
             {
-                $final_day = $day_of_week % 7;
+                $remainder = $day_of_week % 7;
                 foreach($day_values as $key => $value)
                 {
-                    if( $final_day == $value ){
-                        $day = $key;
-                        return $day;
+                    if( $remainder == $value ){
+                        $resulting_day = $key;
+                        return $resulting_day;
                     }
                 }
             } else {
                 foreach($day_values as $key => $value)
                 {
                     if( $day_of_week == $value ){
-                        $day = $key;
-                        return $day;
+                        $resulting_day = $key;
+                        return $resulting_day;
                     }
                 }
             }
