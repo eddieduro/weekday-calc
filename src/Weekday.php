@@ -4,10 +4,10 @@
         function findDay($input_month, $input_day, $input_year)
         {
             $lower_case_month = strtolower($input_month);
-
             $year_number = str_split($input_year);
             $year_number = $year_number[3];
             $month_value = 0;
+            $final_day = 0;
 
             $month_array = array("january"=> 6, "february"=>2, "march"=>2, "april"=>5, "may"=>0, "june"=>3, "july"=>5, "august"=>1, "september"=>4, "october"=>6, "november"=>2, "december"=>4);
 
@@ -26,17 +26,25 @@
             if ($day_of_week > 6)
             {
                 $final_day = $day_of_week % 7;
-                // return $final_day;
+                foreach($day_values as $key => $value)
+                {
+                    if( $final_day == $value ){
+                        $day = $key;
+                        return $day;
+                    }
+                }
+            } else {
+                foreach($day_values as $key => $value)
+                {
+                    if( $day_of_week == $value ){
+                        $day = $key;
+                        return $day;
+                    }
+                }
             }
             // return $day_of_week;
 
-            foreach($day_values as $key => $value)
-            {
-                if(($day_of_week % 7) == $value || $day_of_week == $value){
-                    $day = $key;
-                    return $day;
-                }
-            }
+
         }
     }
 

@@ -9,13 +9,13 @@
             $weekday = new Weekday;
             $input = "august";
             $input2 = "1";
-            $input3 = "2004";
+            $input3 = "2003";
 
             //Act
             $output = $weekday->findDay($input, $input2, $input3);
 
             //Assert
-            $this->assertEquals("saturday", $output);
+            $this->assertEquals("friday", $output);
         }
 
         function test_year()
