@@ -7,14 +7,15 @@
         {
             //Arrange
             $weekday = new Weekday;
-            $input = "July";
-            $input2 = "2000";
+            $input = "august";
+            $input2 = "1";
+            $input3 = "2004";
 
             //Act
-            $output = $weekday->findDay($input, $input2);
+            $output = $weekday->findDay($input, $input2, $input3);
 
             //Assert
-            $this->assertEquals(0, $output);
+            $this->assertEquals("saturday", $output);
         }
 
         function test_year()
@@ -22,13 +23,14 @@
             //Arrange
             $weekday = new Weekday;
             $input = "July";
-            $input2 = "2002";
+            $input2 = "4";
+            $input3 = "2002";
 
             //Act
-            $output = $weekday->findDay($input, $input2);
+            $output = $weekday->findDay($input, $input2, $input3);
 
             //Assert
-            $this->assertEquals(2, $output);
+            $this->assertEquals("thursday", $output);
         }
     }
 
