@@ -8,12 +8,27 @@
             //Arrange
             $weekday = new Weekday;
             $input = "July";
+            $input2 = "2000";
 
             //Act
-            $output = $weekday->findDay($input);
+            $output = $weekday->findDay($input, $input2);
 
             //Assert
-            $this->assertEquals(5, $output);
+            $this->assertEquals(0, $output);
+        }
+
+        function test_year()
+        {
+            //Arrange
+            $weekday = new Weekday;
+            $input = "July";
+            $input2 = "2002";
+
+            //Act
+            $output = $weekday->findDay($input, $input2);
+
+            //Assert
+            $this->assertEquals(2, $output);
         }
     }
 
